@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+
+
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            margin: 0 auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header>
+        <h1>  Welcome to <span class="neon-text">My Portfolio</span></h1>
+    </header>
+
+    <!-- tabs -->
+    <nav>
+        <a href="#About"> About me</a>
+        <a href="#Skills">Skills</a>
+        <a href="#More">More about me</a>
+        <a href="#Reflection">Reflection and future plans</a>
+        <a href="#Design">My design process</a>
+    </nav>
+
+    <!-- sections -->
+    <section id="About">
+        <h2 class="neon-box">About Me</h2>
+        <p>I'm Pedro, 21-year-old IT and Multimedia student at University of Lisbon.
+        <p>Though my home is set in Portugal, I currently reside in Ireland, further fulfilling my studies at the
+            University of Limerick where I continue to explore my passion for technology, creativity, and innovation.
+        </p>
+        <p>With a keen interest in graphic design and web development, I chose this course as my way to go since I
+            enjoy blending scientific principles with digital creativity to craft engaging projects. Whether it's
+            coding, designing, filmmaking, or brainstorming ideas, I thrive on turning thoughts into reality.</p>
+
+        <p>Beyond academics, you'll often find me experimenting with new creative arts, refining my design skills, or
+            diving into computing, music or film projects. I'm always eager to learn, collaborate, and push boundaries
+            in both
+            engineering and digital media.</p>
+        </p>
+
+
+    </section>
+
+    <!-- table -->
+    <section id="Skills">
+        <h2 class="neon-box">Skills</h2>
+        <ul>
+            <li>⚡ Web Development</li>
+            <li>⚡ Graphic Design</li>
+            <li>⚡ Photography</li>
+            <li>⚡ Coding</li>
+        </ul>
+    </section>
+
+    <section id="More">
+        <h2 class="neon-box">More about me</h2>
+        <p>I dream big, so I don't have a particular target set in my mind, rather I have multiple ones. I strive to
+            blossom knowledge on various fields. Because of that, I am always eager to learn more: either it be about my
+            typical area of expertise or outside it. I like to learn about biology and physics and I often combine my
+            leisure time with my working time; I sometimes can't differentiate work from leisure, if the topic interests me, as both are forms of enjoyment for me. I would love to work on
+            any hardware engineering job or a software / video game development project.</p>
+        <p>I find Carl Sagan, David Lynch and Jean-Michel Basquiat to be my biggest inspirations in my field. I like how
+            the three of these notorious persons intertwine within my way of life, though in separate ways.</p>
+        <p>Perhaps my biggest project was co-directing a shortfilm made by a friend of mine a few years ago. I also
+            featured in a music video last year, and also helped a friend of mine creating a small budget video game for
+            his final academic graduation.</p>
+
+    </section>
+
+    <section id="Reflection">
+        <h2 class="neon-box">Reflection and future plans</h2>
+        <div class="Reflection">
+            <h3>🔹 What this small portfolio means</h3>
+            <p>I feel this portfolio has a lot of room to grow, and I'd love to expand it beyond its limits. Whether it
+                would be with more tabs, new pages and resources, I'm fond of creating opportunities to cultivate
+                businesses or projects and this is no different.</p>
+
+            <p>I'm eager to learn how to incorporate more interactive elements in this website to fully maximise its
+                potential. I take inspiration from an artist named <a href="https://miguelluz.pt/videos"
+                    target="_blank">Miguel Luz</a> whose professional portfolio I also find inspiring for my own.</p>
+
+            <p>Not only his website feels authentic and resourceful, it also incorporates a browser decision-making
+                game, and I'd love to do something similiar to one of my own; though adding my touch to it. I would also
+                love to add the details, and implement effects within the tab, such as rollovers and fade outs.</p>
+
+        </div>
+
+
+
+    </section>
+
+    <!-- design process section -->
+<section id="Design">
+    <h2 class="neon-box">My design process</h2>
+    <div class="box">
+        <div class="content">
+            <img src="design prototype.jpeg" alt="Design Process" class="box-image" onclick="openLightbox(this)">
+            
+            <p class="box-text">
+                Before coming up with the HTML code for the portfolio, I started off by drawing a small
+                sketch of how I visualised the website. I drew the prototype relatively simple, in order to allocate
+                room for change and improvisation. The design was relatively accessible to come up with, so I would say
+                the most difficult part of the project as a whole, would be implementing the JavaScript sections
+                whilst making them functional. 
+                After finalising the design, I focused on building the structure and layout. I made sure to optimise
+                the code for responsiveness and accessibility. The portfolio's main objective was to showcase my web 
+                development skills and design approach, and I feel that it turned out to be a fair representation of 
+                my abilities.
+            </p>
+        </div>
+    </div>
+</section>
+
+    </section>
+
+    <!-- lightbox w fade effect -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content">
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>Pedro Lourenço | University of Limerick</p>
+    </footer>
+
+    <!-- js lightbox -->
+    <script>
+        function openLightbox(img) {
+            var lightbox = document.getElementById("lightbox");
+            var lightboxImg = document.getElementById("lightbox-img");
+
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src; // set clicked image as lightbox image
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        // close lightbox if user clicks outside the image
+        window.addEventListener('click', function (event) {
+            var lightbox = document.getElementById("lightbox");
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
